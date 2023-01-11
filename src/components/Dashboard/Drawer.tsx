@@ -4,8 +4,9 @@ import { Icon } from "@iconify/react";
 import navbarData from "../../layout/navbar";
 import Briefcase from "./assets/briefcase 1.svg";
 import Home from "./assets/home 1.svg";
+import { Link } from "react-router-dom";
 
-function ShowNav({screen}) {
+function ShowNav({ screen }) {
   const [opened, setOpened] = useState(false);
   const [selected, setSelected] = useState("Users");
 
@@ -20,14 +21,35 @@ function ShowNav({screen}) {
           },
           body: {
             height: "100%",
-            overflow: "auto"
-          }
+            overflow: "auto",
+          },
         }}
         className="containerDrawer"
         opened={opened}
         onClose={() => setOpened(false)}
         size="sm"
       >
+        <Link to="/login">
+          <div
+            style={{
+              display: "flex",
+              fontSize: "18px",
+              paddingInline: "1.5rem",
+              color: "#213F7D",
+              alignItems: "center",
+              justifyContent: "space-between"
+            }}
+          >
+            <p>Logout</p>
+            <Icon
+              style={{ cursor: "pointer" }}
+              height={24}
+              width={24}
+              color="#213F7D"
+              icon="mdi-light:logout"
+            />
+          </div>
+        </Link>
         <nav className="navigationDrawer">
           <p className="dropdown">
             <span>
@@ -72,7 +94,10 @@ function ShowNav({screen}) {
         </nav>
       </Drawer>
 
-      <Group className={screen === "mobile" ? "drawerMobile" : ""} position="center">
+      <Group
+        className={screen === "mobile" ? "drawerMobile" : ""}
+        position="center"
+      >
         <Icon
           onClick={() => setOpened(true)}
           className="navDrawer"
