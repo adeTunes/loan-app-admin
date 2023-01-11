@@ -100,6 +100,7 @@ function ShowNav({ screen }) {
       >
         <Icon
           onClick={() => setOpened(true)}
+          style={{cursor: "pointer"}}
           className="navDrawer"
           color="#213f7d"
           icon="mi:menu"
