@@ -280,18 +280,15 @@
       @include paddingStyle2();
     }
 
-    .contentStatsCards {
-      grid-template-columns: repeat(auto-fill, minmax(min(171px, 100%), 1fr));
-      display: grid;
-      gap: 25px;
-      padding: 0px 50px;
 
+    .contentStatsCards {
       .statsCard {
         background-color: #fff;
         border: 1px solid rgba(33, 63, 125, 0.06);
         box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
         border-radius: 4px;
         padding: 25px;
+        white-space: nowrap;
         @include columnFlexStyle(5px);
 
         .cardHeading {
