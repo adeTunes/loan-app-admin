@@ -219,7 +219,7 @@ const UserTable = () => {
                         fontSize: "12px",
                         lineHeight: "14.08px",
                       }}
-                      className="py-4 text-[#514747] pl-4 text-left font-normal"
+                      className="py-4 tableHead text-[#514747] text-left font-normal"
                     >
                       <span
                         style={{

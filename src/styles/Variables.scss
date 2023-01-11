@@ -162,9 +162,10 @@ $secondaryColor: #39cdcc;
         overflow: auto;
 
         .navHeading {
-          @include rowFlexStyle(3px);
-          opacity: 0.6;
+          @include rowFlexStyle(10px);
           padding-left: 1.5rem;
+          opacity: 0.6;
+
 
           span {
             @include textStyle2(400, 14px, 18.77px, $headingColor);
@@ -177,7 +178,6 @@ $secondaryColor: #39cdcc;
 
           .listHeading {
             @include columnFlexStyle(15px);
-            opacity: 0.6;
 
             .title {
               text-transform: uppercase;
@@ -192,7 +192,7 @@ $secondaryColor: #39cdcc;
                 .listGroup {
                   cursor: pointer;
                   padding-block: 5px;
-                  @include rowFlexStyle(3px);
+                  @include rowFlexStyle(10px);
                   padding-left: 1.5rem;
                 }
                 img {
