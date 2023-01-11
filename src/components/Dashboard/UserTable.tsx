@@ -189,7 +189,7 @@ const UserTable = () => {
     }
   ) as TableInstanceWithHooks<object>;
 
-  const { pageIndex, pageSize, globalFilter }: any = state;
+  const { pageIndex, pageSize }: any = state;
 
   return (
     <div className="grid  grid-rows-[1fr_auto]">
