@@ -41,7 +41,7 @@
   }
 
   .leftPartHeader {
-    @include rowFlexStyle(70px);
+    @include rowFlexStyle(75px);
     justify-content: space-between;
 
     @include media("<=tablet") {
@@ -350,6 +350,7 @@
 }
 
 .tableData {
+  position: relative;
   padding-block: 12px;
   padding-inline: 16px;
   line-height: 16.42px;

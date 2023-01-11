@@ -194,7 +194,7 @@ const UserTable = () => {
   return (
     <div className="grid  grid-rows-[1fr_auto]">
       <div className="overflow-x-scroll">
-        <table {...getTableProps()} className="bg-[white]">
+        <table {...getTableProps()} className="bg-[white] w-full">
           <thead className=" text-[#514747]  font-normal">
             {headerGroups.map((headerGroups, idx) => (
               <tr key={idx} {...headerGroups.getHeaderGroupProps()}>
@@ -219,7 +219,7 @@ const UserTable = () => {
                         fontSize: "12px",
                         lineHeight: "14.08px",
                       }}
-                      className="py-4 text-[#514747] pl-6 text-left font-normal"
+                      className="py-4 text-[#514747] pl-4 text-left font-normal"
                     >
                       <span
                         style={{
@@ -274,7 +274,7 @@ const UserTable = () => {
                                 ? "#E9B200"
                                 : "#E4033B",
                             borderRadius: "100px",
-                            padding: "8px 4px",
+                            padding: "11px 14px",
                             display: "flex",
                             justifyContent: "center",
                             fontWeight: 400,
