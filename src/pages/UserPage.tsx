@@ -7,6 +7,7 @@ import UserInformation from "../components/UserPage/UserInformation";
 import { UserDataType } from "../layout/userDate";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import Avatar from "../components/UserPage/assets/avatar.png";
 
 function UserPage() {
   const { id } = useParams();
@@ -36,6 +37,7 @@ function UserPage() {
         userId={user ? user?.userId || "Nil" : ""}
         accountBalance={user ? user?.accountBalance : ""}
         accountNumber={user ? user?.accountNumber : ""}
+        image={user && user.profile.avatar ? user.profile.avatar : Avatar}
       />
       <div className="userInfo">
         <UserInformation
