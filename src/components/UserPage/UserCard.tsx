@@ -2,7 +2,7 @@ import { Icon } from "@iconify/react";
 import { useState } from "react";
 import UserPics from "./assets/user-pics.png";
 
-function UserCard({userId, fullName, accountBalance, accountNumber}) {
+function UserCard({userId, fullName, image, accountBalance, accountNumber}) {
   const [selected, setSelected] = useState(0);
 
   const navList = [
@@ -17,7 +17,7 @@ function UserCard({userId, fullName, accountBalance, accountNumber}) {
   return (
     <div className="userCard">
       <div className="profileCard">
-        <img src={UserPics} alt="" />
+        <img src={image} alt="" />
         <div className="userNameId">
           <p className="name">{fullName}</p>
           <p className="userId">{userId}</p>
