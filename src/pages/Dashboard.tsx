@@ -1,7 +1,5 @@
 import "../components/Dashboard/dashboard.scss";
 import DashboardLayout from "../components/Dashboard/DashboardLayout";
-import Header from "../components/Dashboard/Header";
-import Navbar from "../components/Dashboard/Navbar";
 import StatsCard from "../components/Dashboard/StatsCard";
 import UserTable from "../components/Dashboard/UserTable";
 import adminStats from "../layout/adminStats";

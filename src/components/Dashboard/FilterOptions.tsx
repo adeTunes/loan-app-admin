@@ -1,10 +1,10 @@
-import { Select, Popover, Menu, TextInput } from "@mantine/core";
+import { Select, Popover, TextInput } from "@mantine/core";
 import { DatePicker } from "@mantine/dates";
 import { Icon } from "@iconify/react";
 import { useForm } from "@mantine/form";
 import { useEffect, useState } from "react";
 
-function FilterOptions({ organizations, filter, setFilter }) {
+function FilterOptions({ organizations, setFilter }) {
   const form = useForm({
     initialValues: {
       organization: "",

@@ -5,7 +5,6 @@ import UserHeading from "../components/UserPage/userHeading";
 import UserCard from "../components/UserPage/UserCard";
 import UserInformation from "../components/UserPage/UserInformation";
 import { UserDataType } from "../layout/userDate";
-import { useQuery } from "react-query";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
@@ -24,6 +23,7 @@ function UserPage() {
 
   useEffect(() => {
     getUser();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

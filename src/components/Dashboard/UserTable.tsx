@@ -161,8 +161,6 @@ const UserTable = () => {
     canNextPage,
     canPreviousPage,
     pageOptions,
-    gotoPage,
-    pageCount,
     setPageSize,
     state,
     setGlobalFilter,
@@ -235,7 +233,7 @@ const UserTable = () => {
                         </span>
                         <FilterOptions
                           organizations={organizations}
-                          filter={globalFilter}
+                          
                           setFilter={setGlobalFilter}
                         />
                       </span>

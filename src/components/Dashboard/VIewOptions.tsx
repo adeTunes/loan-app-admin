@@ -1,7 +1,7 @@
-import { Button, Menu } from "@mantine/core";
+import {  Menu } from "@mantine/core";
 import { Icon } from "@iconify/react";
 import Icons from "./Icon";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function VIewOptions({ rowDetails }: any) {
   return (

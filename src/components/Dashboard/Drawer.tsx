@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Drawer, Button, Group } from "@mantine/core";
+import { Drawer, Group } from "@mantine/core";
 import { Icon } from "@iconify/react";
 import navbarData from "../../layout/navbar";
 import Briefcase from "./assets/briefcase 1.svg";
