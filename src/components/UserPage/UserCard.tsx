@@ -1,6 +1,5 @@
 import { Icon } from "@iconify/react";
 import { useState } from "react";
-import UserPics from "./assets/user-pics.png";
 
 function UserCard({userId, fullName, image, accountBalance, accountNumber}) {
   const [selected, setSelected] = useState(0);
