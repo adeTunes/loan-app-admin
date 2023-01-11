@@ -1,4 +1,5 @@
 import { Icon } from "@iconify/react";
+import { Link } from "react-router-dom";
 import Logo from "./assets/Group.png";
 import userPics from "./assets/user-pics.png";
 import ShowNav from "./Drawer";
@@ -45,6 +46,10 @@ function Header() {
             <p className="userSurname">Adedeji</p>
             <Icon icon="ic:twotone-arrow-drop-down" />
           </div>
+          <Link to="/login">
+          <Icon style={{cursor: "pointer"}} height={24}
+          width={24} color="#213F7D" icon="mdi-light:logout" />
+          </Link>
         </div>
       </div>
 
@@ -52,6 +57,10 @@ function Header() {
       <div className="userProfileTab">
         <img className="userPics" src={userPics} alt="" />
         <Icon icon="ic:twotone-arrow-drop-down" />
+        <Link to="/login">
+          <Icon style={{cursor: "pointer"}} height={24}
+          width={24} color="#213F7D" icon="mdi-light:logout" />
+          </Link>
       </div>
     </header>
   );

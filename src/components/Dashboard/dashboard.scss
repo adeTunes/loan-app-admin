@@ -161,12 +161,7 @@
 }
 
 .userProfileTab {
-  @include media(">tablet") {
-    display: none;
-  }
-  @include media("<=phone") {
-    display: none;
-  }
+  
   display: flex;
   align-items: center;
   gap: 15px;
@@ -174,6 +169,12 @@
   .userPics {
     width: 35px;
     border-radius: 100%;
+  }
+  @include media(">=tablet") {
+    display: none;
+  }
+  @include media("<=phone") {
+    display: none;
   }
 }
 
