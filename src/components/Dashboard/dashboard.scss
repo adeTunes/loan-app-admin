@@ -29,6 +29,9 @@
 
   .drawerMobile {
     display: none;
+    & > * {
+      cursor: pointer;
+    }
     @include media("<=phone") {
       display: grid;
     }
@@ -59,7 +62,9 @@
     img {
       height: 20px;
     }
-
+    .pointerCursor {
+      cursor: pointer;
+    }
     .navDrawer {
       display: none;
       cursor: pointer;

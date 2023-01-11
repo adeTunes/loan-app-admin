@@ -10,6 +10,8 @@ function Header() {
     <header className="headerContainer">
       <img className="logoMobile" src={Logo} alt="" />
       <ShowNav screen="mobile" />
+
+      {/* Not diplayed at mobile sized screen */}
       <div className="leftPartHeader">
         <img src={Logo} alt="" />
         <ShowNav screen="tablet" />
