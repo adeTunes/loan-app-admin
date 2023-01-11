@@ -41,8 +41,12 @@
   }
 
   .leftPartHeader {
-    @include rowFlexStyle(10px);
+    @include rowFlexStyle(70px);
     justify-content: space-between;
+
+    @include media("<=tablet") {
+      gap: 30px;
+    }
     .tabletSizeBtn {
       display: none;
       background: $secondaryColor;
@@ -166,7 +170,6 @@
 }
 
 .userProfileTab {
-  
   display: flex;
   align-items: center;
   gap: 15px;
@@ -191,7 +194,7 @@
   font-family: "Work Sans";
 
   .navigation {
-    width: 200px;
+    width: 231px;
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -204,12 +207,12 @@
     }
 
     .dropdown {
-      @include rowFlexStyle(6px);
+      @include rowFlexStyle(9px);
       @include textStyle2(400, 14px, 18.77px, $headingColor);
       padding-left: 1.5rem;
 
       span {
-        @include rowFlexStyle(3px);
+        @include rowFlexStyle(10px);
       }
     }
 
@@ -219,7 +222,7 @@
       overflow: auto;
 
       .navHeading {
-        @include rowFlexStyle(3px);
+        @include rowFlexStyle(10px);
         opacity: 0.6;
         padding-left: 1.5rem;
 
@@ -249,7 +252,7 @@
               .listGroup {
                 cursor: pointer;
                 padding-block: 5px;
-                @include rowFlexStyle(3px);
+                @include rowFlexStyle(10px);
                 padding-left: 1.5rem;
               }
               img {
@@ -280,8 +283,11 @@
       @include paddingStyle2();
     }
 
-
     .contentStatsCards {
+      grid-template-columns: repeat(auto-fill, minmax(min(171px, 100%), 1fr));
+      display: grid;
+      gap: 25px;
+      @include paddingStyle4();
       .statsCard {
         background-color: #fff;
         border: 1px solid rgba(33, 63, 125, 0.06);
@@ -352,14 +358,13 @@
     padding-block: 6px;
     padding-inline: 8px;
     font-size: 12px;
-    line-height: 0px,
+    line-height: 0px;
   }
 }
 
-
 .desktopPage {
   background: white;
-  margin-inline: 24px;
+  @include paddingStyle5();
   margin-top: 16px;
   padding-block: 8px;
   display: flex;
