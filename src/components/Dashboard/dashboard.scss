@@ -349,6 +349,14 @@
   }
 }
 
+.tableHead {
+  padding-left: 1rem;
+
+  @include media("<=tablet") {
+    padding-left: 0.5rem;
+  }
+}
+
 .tableData {
   position: relative;
   padding-block: 12px;

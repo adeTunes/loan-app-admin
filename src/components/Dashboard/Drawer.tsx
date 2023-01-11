@@ -65,7 +65,7 @@ function ShowNav({ screen }) {
             <ul className="navParentList">
               {navbarData.map((item, idx) => (
                 <li key={idx} className="listHeading">
-                  <span className="title">{item.title}</span>
+                  <span className="title" style={{ opacity: 0.6 }}>{item.title}</span>
                   <ul className="navChildrenList">
                     {item.children.map((el, idx) => (
                       <li key={idx} className="eachList">
@@ -81,8 +81,10 @@ function ShowNav({ screen }) {
                           onClick={() => setSelected(el.title)}
                           className="listGroup"
                         >
-                          <img src={el.icon} alt="" />
-                          <span>{el.title}</span>
+                          <img style={{ opacity: selected === el.title ? 1 : 0.6 }} src={el.icon} alt="" />
+                          <span style={{
+                          opacity: selected === el.title ? 1 : 0.6,
+                        }}>{el.title}</span>
                         </span>
                       </li>
                     ))}
