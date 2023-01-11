@@ -1,0 +1,274 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@font-face {
+  font-family: "Avenir Next";
+  src: url("./fonts/AvenirNextLTPro-Bold.otf");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("./fonts/AvenirNextLTPro-It.otf");
+  font-style: italic;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("./fonts/AvenirNextLTPro-Regular.otf");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SF Compact Text";
+  src: url("./fonts/FontsFree-Net-SFCompactText-Medium.ttf");
+  font-weight: 400;
+}
+
+$fontLogin: "Avenir Next";
+$headingColor: #213f7d;
+$secondaryColor: #39cdcc;
+
+@mixin textStyle($weight, $size, $line, $letter, $color) {
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $line;
+  letter-spacing: $letter;
+  color: $color;
+}
+
+@mixin textStyle2($weight, $size, $line, $color) {
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $line;
+  color: $color;
+}
+
+@mixin rowFlexStyle($gap) {
+  display: flex;
+  gap: $gap;
+  align-items: center;
+}
+
+@mixin columnFlexStyle($gap) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
+
+@mixin userSettingsButton($color) {
+  border: 1px solid $color;
+  border-radius: 8px;
+  padding: 4px 8px;
+
+  span {
+    @include textStyle2(600, 11px, 0.1em, $color);
+    text-transform: uppercase;
+  }
+}
+
+@mixin userInfotyle($columns) {
+  grid-template-columns: repeat(auto-fill, minmax(min(171px, 100%), 1fr));
+  display: grid;
+  gap: 15px;
+
+  .detailsGroup {
+    @include columnFlexStyle(5px);
+
+    .detailHeading {
+      @include textStyle2(400, 10px, 14px, #545f7d);
+    }
+    .detailInfo {
+      @include textStyle2(500, 12px, 18.77px, #545f7d);
+    }
+  }
+}
+
+@mixin paddingStyle() {
+  padding: 40px 40px 0px 40px;
+
+  @include media("<=tablet") {
+    padding: 40px 0px;
+  }
+}
+@mixin paddingStyle2() {
+  @include media("<=tablet") {
+    padding-left: 20px;
+  }
+}
+
+@mixin paddingStyle3() {
+  padding-left: 1.5rem;
+  padding-right: 2.5rem;
+  @include media("<=phone") {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+@mixin filterBtnStyle($border, $bg, $text) {
+  border: 1px solid $border;
+  border-radius: 8px;
+  background: $bg;
+  padding: 10px 20px;
+
+  span {
+    @include textStyle2(500, 14px, 16px, $text);
+  }
+}
+
+@mixin sidebarStyle() {
+  .containerDrawer {
+    font-family: "Work Sans";
+    height: 100vh;
+
+    .navigationDrawer {
+      width: 200px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      padding-top: 25px;
+      padding-bottom: 15px;
+      overflow: auto;
+
+      .dropdown {
+        @include rowFlexStyle(6px);
+        @include textStyle2(400, 14px, 18.77px, $headingColor);
+        padding-left: 1.5rem;
+
+        span {
+          @include rowFlexStyle(3px);
+        }
+      }
+
+      .navArea {
+        flex: 1;
+        @include columnFlexStyle(25px);
+        overflow: auto;
+
+        .navHeading {
+          @include rowFlexStyle(3px);
+          opacity: 0.6;
+          padding-left: 1.5rem;
+
+          span {
+            @include textStyle2(400, 14px, 18.77px, $headingColor);
+          }
+        }
+
+        .navParentList {
+          @include columnFlexStyle(20px);
+          overflow: auto;
+
+          .listHeading {
+            @include columnFlexStyle(15px);
+            opacity: 0.6;
+
+            .title {
+              text-transform: uppercase;
+              @include textStyle2(500, 12px, 14.08px, #545f7d);
+              padding-left: 1.5rem;
+            }
+
+            .navChildrenList {
+              @include columnFlexStyle(8px);
+
+              .eachList {
+                .listGroup {
+                  cursor: pointer;
+                  padding-block: 5px;
+                  @include rowFlexStyle(3px);
+                  padding-left: 1.5rem;
+                }
+                img {
+                  width: 12px;
+                  height: 12px;
+                }
+                span {
+                  text-transform: none;
+                  @include textStyle(400, 15px, 19px, 0px, $headingColor);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .content {
+      flex: 1;
+      background: hsl(0, 0%, 98%);
+      padding: 40px 40px 0px 40px;
+      display: grid;
+      grid-template-rows: auto auto 1fr;
+      gap: 25px;
+      overflow: auto;
+
+      .contentHeading {
+        @include textStyle2(500, 20px, 28px, $headingColor);
+      }
+
+      .contentStatsCards {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+
+        .statsCard {
+          background-color: #fff;
+          border: 1px solid rgba(33, 63, 125, 0.06);
+          box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+          border-radius: 4px;
+          padding: 25px;
+          width: 171px;
+          @include columnFlexStyle(5px);
+
+          .cardHeading {
+            @include textStyle2(500, 12px, 1em, #545f7d);
+            text-transform: uppercase;
+          }
+
+          .cardStats {
+            @include textStyle2(600, 20px, 01em, $headingColor);
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin searchPopoverStyle() {
+  .searchBoxPopover {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    width: 250px;
+
+    input {
+      border: 1px solid #21407d3f;
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
+      padding-left: 15px;
+      flex: 1;
+      height: 100%;
+      outline: none;
+      color: #000 !important;
+      opacity: 1 !important;
+
+      &::placeholder {
+        font-size: 14px;
+        font-family: "Work Sans";
+        font-weight: 400;
+        line-height: 16.42px;
+      }
+    }
+    button {
+      background: $secondaryColor;
+      height: 100%;
+      width: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+    }
+  }
+}

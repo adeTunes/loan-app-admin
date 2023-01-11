@@ -1,0 +1,113 @@
+@import "../../styles/Variables.scss";
+@import "../../styles/Breakpoints.scss";
+
+@mixin mainItemContainerStyle() {
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.loginPageContainer {
+  width: 90%;
+  height: 100vh;
+  margin-inline: auto;
+  padding-block: 60px;
+  display: flex;
+  flex-direction: column;
+  font-family: $fontLogin;
+  justify-content: space-between;
+  .logoContainer {
+    .logo {
+      height: 36px;
+      @include media("<=tablet") {
+        height: 28px;
+      }
+    }
+  }
+  .mainItemContainer {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+
+    @include media("<=tablet") {
+      display: block
+    }
+
+    .heroContainer {
+      .hero {
+        width: 100%;
+        max-width: 600px;
+      }
+      @include media("<=tablet") {
+        display: none
+      }
+    }
+    .formContainer {
+      width: 80%;
+      justify-self: end;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+
+      @include media("<=tablet") {
+        margin: auto;
+        margin-top: 30px
+      }
+
+      .headingGroup {
+        .formHeading {
+          @include textStyle(bold, 30px, 54.64px, -4%, $headingColor);
+
+          @include media("<=tablet") {
+            font-size: 18px
+          }
+        }
+
+        .subHeading {
+          @include textStyle(normal, 14px, 27.32px, -4%, #545f7d);
+        }
+      }
+
+      .inputGroup {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        .fields {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+
+          @include media("<=tablet") {
+            & > * {
+              width: 100%
+            }
+          }
+
+          .forgotPassword {
+            @include textStyle(bold, 12px, 16.39px, 10%, $secondaryColor);
+            text-decoration: none;
+          }
+        }
+
+        .submitButton {
+          @include textStyle(bold, 12px, 19.12px, 10%, #fff);
+          cursor: pointer;
+          padding-block: 10px;
+          width: 85%;
+          border: 0;
+          background: $secondaryColor;
+          border-radius: 8px;
+
+          @include media("<=tablet") {
+            margin: auto;
+          }
+        }
+      }
+    }
+  }
+}

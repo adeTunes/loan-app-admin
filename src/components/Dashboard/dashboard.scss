@@ -1,0 +1,386 @@
+@import "../../styles/Variables.scss";
+@import "../../styles/Breakpoints.scss";
+
+#root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  // display: grid;
+  // grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  @include paddingStyle3();
+  padding-block: 15px;
+  box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
+
+  .logoMobile {
+    display: none;
+    height: 20px;
+
+    @include media("<=phone") {
+      display: block;
+    }
+  }
+
+  .drawerMobile {
+    display: none;
+    @include media("<=phone") {
+      display: grid;
+    }
+    @include media(">phone") {
+      display: none;
+    }
+  }
+
+  .leftPartHeader {
+    @include rowFlexStyle(10px);
+    justify-content: space-between;
+    .tabletSizeBtn {
+      display: none;
+      background: $secondaryColor;
+      height: 30px;
+      width: 30px;
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+
+      @include media("<=tablet") {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+      }
+    }
+    img {
+      height: 20px;
+    }
+
+    .navDrawer {
+      display: none;
+      cursor: pointer;
+      @include media("<=tablet") {
+        display: inline-block;
+      }
+    }
+
+    .searchBox {
+      display: flex;
+      align-items: center;
+      height: 30px;
+      width: 250px;
+
+      @include media("<=tablet") {
+        display: none;
+      }
+
+      .searchInput {
+        border: 1px solid #21407d3f;
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+        padding-left: 15px;
+        flex: 1;
+        height: 100%;
+        outline: none;
+        color: #000 !important;
+        opacity: 1 !important;
+
+        &::placeholder {
+          font-size: 14px;
+          font-family: "Work Sans";
+          font-weight: 400;
+          line-height: 16.42px;
+        }
+      }
+      .searchBtn {
+        background: $secondaryColor;
+        height: 100%;
+        width: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        @include media("<=tablet") {
+          display: none;
+        }
+      }
+    }
+
+    @include media("<=phone") {
+      display: none;
+    }
+  }
+
+  @include searchPopoverStyle();
+
+  .rightPartHeader {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    justify-content: flex-end;
+
+    @include media("<=tablet") {
+      display: none;
+    }
+
+    .linkPara {
+      .linkText {
+        font-family: Roboto;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 18.75px;
+        text-decoration: underline;
+        color: #213f7d;
+      }
+    }
+    .userProfile {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+
+      @include media("<=tablet") {
+        display: none;
+      }
+      .userPics {
+        width: 35px;
+        border-radius: 100%;
+      }
+
+      .username {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+    }
+  }
+}
+
+.userProfileTab {
+  @include media(">tablet") {
+    display: none;
+  }
+  @include media("<=phone") {
+    display: none;
+  }
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  justify-content: flex-end;
+  .userPics {
+    width: 35px;
+    border-radius: 100%;
+  }
+}
+
+@include sidebarStyle();
+.mainContainer {
+  display: flex;
+  flex: 1;
+  overflow: auto;
+  font-family: "Work Sans";
+
+  .navigation {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-top: 25px;
+    padding-bottom: 15px;
+    overflow: auto;
+
+    @include media("<=tablet") {
+      display: none;
+    }
+
+    .dropdown {
+      @include rowFlexStyle(6px);
+      @include textStyle2(400, 14px, 18.77px, $headingColor);
+      padding-left: 1.5rem;
+
+      span {
+        @include rowFlexStyle(3px);
+      }
+    }
+
+    .navArea {
+      flex: 1;
+      @include columnFlexStyle(25px);
+      overflow: auto;
+
+      .navHeading {
+        @include rowFlexStyle(3px);
+        opacity: 0.6;
+        padding-left: 1.5rem;
+
+        span {
+          @include textStyle2(400, 14px, 18.77px, $headingColor);
+        }
+      }
+
+      .navParentList {
+        @include columnFlexStyle(20px);
+        overflow: auto;
+
+        .listHeading {
+          @include columnFlexStyle(15px);
+          opacity: 0.6;
+
+          .title {
+            text-transform: uppercase;
+            @include textStyle2(500, 12px, 14.08px, #545f7d);
+            padding-left: 1.5rem;
+          }
+
+          .navChildrenList {
+            @include columnFlexStyle(8px);
+
+            .eachList {
+              .listGroup {
+                cursor: pointer;
+                padding-block: 5px;
+                @include rowFlexStyle(3px);
+                padding-left: 1.5rem;
+              }
+              img {
+                width: 12px;
+                height: 12px;
+              }
+              span {
+                text-transform: none;
+                @include textStyle(400, 15px, 19px, 0px, $headingColor);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .content {
+    flex: 1;
+    background: hsl(0, 0%, 98%);
+    @include paddingStyle();
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    gap: 25px;
+    overflow: auto;
+
+    .contentHeading {
+      @include textStyle2(500, 20px, 28px, $headingColor);
+      @include paddingStyle2();
+    }
+
+    .contentStatsCards {
+      grid-template-columns: repeat(auto-fill, minmax(min(171px, 100%), 1fr));
+      display: grid;
+      gap: 25px;
+      padding: 0px 50px;
+
+      .statsCard {
+        background-color: #fff;
+        border: 1px solid rgba(33, 63, 125, 0.06);
+        box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+        border-radius: 4px;
+        padding: 25px;
+        @include columnFlexStyle(5px);
+
+        .cardHeading {
+          @include textStyle2(500, 12px, 1em, #545f7d);
+          text-transform: uppercase;
+        }
+
+        .cardStats {
+          @include textStyle2(600, 20px, 01em, $headingColor);
+        }
+      }
+    }
+  }
+}
+.filterDropdown {
+  background: #ffffff;
+  border: 1px solid rgba(84, 95, 125, 0.14);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+  padding: 25px 15px;
+  top: 70.29px !important;
+}
+
+.filterLabel {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  color: #545f7d;
+}
+
+.filterInputBorder {
+  border: 1px solid #213f7d33;
+  border-radius: 8px;
+}
+
+// .datePickerDropdown {
+//   top: -28.3128px !important;
+// }
+
+.filterFieldGroup {
+  @include columnFlexStyle(20px);
+  .filterButtonGroup {
+    @include rowFlexStyle(15px);
+
+    .resetBtn {
+      @include filterBtnStyle(#545f7d, white, #545f7d);
+    }
+
+    .filterBtn {
+      @include filterBtnStyle(#39cdcc, #39cdcc, #fff);
+    }
+  }
+}
+
+.tableData {
+  padding-block: 12px;
+  padding-inline: 16px;
+  line-height: 16.42px;
+
+  @include media("<=tablet") {
+    padding-block: 6px;
+    padding-inline: 8px;
+    font-size: 12px;
+    line-height: 0px,
+  }
+}
+
+
+.desktopPage {
+  background: white;
+  margin-inline: 24px;
+  margin-top: 16px;
+  padding-block: 8px;
+  display: flex;
+  justify-content: space-between;
+  @include media("<=phone") {
+    display: none;
+  }
+}
+
+.desktopBtn {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.tabletPage {
+  display: none;
+
+  @include media(">phone") {
+    display: none;
+  }
+  @include media("<=phone") {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+  }
+}
